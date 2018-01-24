@@ -4,9 +4,9 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source "$CURRENT_DIR/helpers.sh"
 
-color_kube_dev_default="#[fg=colour221]"
-color_kube_stage_default="#[fg=yellow]"
-color_kube_prod_default="#[fg=red]"
+color_kube_dev_default="#[fg=colour32]"
+color_kube_stage_default="#[fg=colour221]"
+color_kube_prod_default="#[fg=196]"
 
 color_kube_dev=""
 color_kube_stage=""
@@ -23,13 +23,12 @@ get_kube_color_settings() {
 
 print_kube_fg() {
     kubecluster=$($CURRENT_DIR/kube_cluster.sh)
-    
-    if [ $kubecluster in $prod ]; then
-        printf $color_kube_prod
-    elif [ $kubecluster in $stage ];then
-        printf $color_kube_stage
+    if [[ $prod = *"$kubecluster"* ]]; then
+        echo "$color_kube_prod"
+    elif [[ $stage = *"$kubecluster"* ]];then
+        echo "$color_kube_stage"
     else
-        printf $kube_color_dev
+        echo "$color_kube_dev"
     fi
 }
 
