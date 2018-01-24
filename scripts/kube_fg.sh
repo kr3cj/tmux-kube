@@ -4,7 +4,7 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source "$CURRENT_DIR/helpers.sh"
 
-color_kube_dev_default="#[fg=green]"
+color_kube_dev_default="#[fg=colour221]"
 color_kube_stage_default="#[fg=yellow]"
 color_kube_prod_default="#[fg=red]"
 
