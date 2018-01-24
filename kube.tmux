@@ -8,10 +8,12 @@ source "$CURRENT_DIR/scripts/helpers.sh"
 kube_interpolation=(
     "\#{kube_namespace}"
     "\#{kube_cluster}"
+    "\#{kube_fg}"
 )
 kube_commands=(
     "#($CURRENT_DIR/scripts/kube_namespace.sh)"
     "#($CURRENT_DIR/scripts/kube_cluster.sh)"
+    "#($CURRENT_DIR/scripts/kube_fg.sh)"
 )
 
 set_tmux_option() {
