@@ -4,13 +4,14 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source "$CURRENT_DIR/scripts/helpers.sh"
 
+# These have to be in the same order
 kube_interpolation=(
     "\#{kube_namespace}"
     "\#{kube_cluster}"
 )
 kube_commands=(
-    "#($CURRENT_DIR/scripts/kube_cluster.sh)"
     "#($CURRENT_DIR/scripts/kube_namespace.sh)"
+    "#($CURRENT_DIR/scripts/kube_cluster.sh)"
 )
 
 set_tmux_option() {
