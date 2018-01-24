@@ -14,14 +14,14 @@ kube_commands=(
 )
 
 set_tmux_option() {
-    local option="$1"
-    local value="$2"
+    local option=$1
+    local value=$2
     tmux set-option -gq "$option" "$value"
 }
 
 do_interpolation() {
     local all_interpolated="$1"
-    for ((i=0; i<${#cpu_commands[@]}; i++)); do
+    for ((i=0; i<${#kube_commands[@]}; i++)); do
         all_interpolated=${all_interpolated/${kube_interpolation[$i]}/${kube_commands[$i]}}
     done
     echo "$all_interpolated"
@@ -30,7 +30,7 @@ do_interpolation() {
 update_tmux_option() {
     local option=$1
     local option_value=$(get_tmux_option "$option")
-    local new_option_value=$( do_interpolation "$option_value")
+    local new_option_value=$(do_interpolation "$option_value")
     set_tmux_option "$option" "$new_option_value"
 }
 
