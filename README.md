@@ -63,3 +63,4 @@ Changing Colors:
     set -g @kube_color_stage '#[fg=colour221]'
     set -g @kube_color_prod '#[fg=colour196]'
 ```
+
