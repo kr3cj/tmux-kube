@@ -12,7 +12,7 @@ jq is required for parsing the output.
 ### Installation with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) (recommended)
 
 Add plugin to the list of TPM plugins in `.tmux.conf`
-    set -g @plugin 'tmux-plugins/tmux-kube'
+    set -g @plugin 'sudermanjr/tmux-kube'
 
 Hit `prefix + I` to fetch the plugin and source it.
 
